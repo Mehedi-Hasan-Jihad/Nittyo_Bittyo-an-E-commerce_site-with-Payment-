@@ -1,0 +1,16 @@
+from django.urls import path
+
+
+from . import views
+
+
+urlpatterns = [
+    path('', views.index,name='index'),
+    path('about/',views.about,name="about"),
+    path('contact/',views.contact,name="contact"),
+    path('tracker/',views.tracker, name="tracker"),
+    path("products/<int:myid>", views.productView, name="ProductView"),
+    path('search/',views.search,name="Search"),
+    path('checkout/',views.checkout,name="Checkout"),
+    path('handlerequest/',views.handlerequest,name='Handlerequest')
+] 

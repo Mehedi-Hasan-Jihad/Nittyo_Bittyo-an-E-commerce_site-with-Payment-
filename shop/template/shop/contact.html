@@ -1,0 +1,37 @@
+{% extends "shop/master.html" %}
+{% block title %} Contact {% endblock %}
+{% block body %} 
+<div class="container my-5">
+    <h3>Contact Us</h3>
+    <form action="/shop/contact/" method="post">{% csrf_token %} 
+        <div class="mb-3 my-5">
+            <label for="name" class="form-label"><h5>Name</h5> </label>
+            <input type="text" class="form-control" id="name" name="name" placeholder="Enter Your Name">
+          </div>
+          <div class="mb-3 my-5">
+            <label for="phone" class="form-label"><h5>Phone</h5> </label>
+            <input type="tel" class="form-control" id="phone" name="phone" placeholder="Your Contact Number">
+          </div>
+          <div class="mb-3 my-5">
+            <label for="email" class="form-label"><h5>E-mail</h5> </label>
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Your E-mail">
+          </div>
+          <div class="mb-3 my-5" >
+            <label for="desc" class="form-label"><h5>How can we help you ?</h5> </label>
+            <textarea type="text" style="height:300px;" class="form-control" id="desc" name="desc" placeholder=""></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Submit</button>
+
+    </form>
+
+</div>
+
+{% endblock %}
+{% block js %}
+<script>
+  {% if thank %}
+  alert('Thanks for contacting with us . We will contact with you very soon . Stay with NittyoBittyo')
+  document.location('/shop/contact.html')
+  {% endif %}
+</script>
+{% endblock %}
